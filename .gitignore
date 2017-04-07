@@ -60,3 +60,7 @@ venv_bloodhound/
 .DS_Store
 *.sqlite3
 .env
+
+.idea/*
+.idea/airbnbNewUserPredictions.iml
+.idea/misc.xml
