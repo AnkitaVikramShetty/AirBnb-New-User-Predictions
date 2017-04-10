@@ -18,8 +18,16 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-	
-	url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
+
+    # Home page view
+    url(r'^$', 'airbnbNewUserPredictions.core.views.home_page', name='home'),
+    # About button
+    url(r'^about/$', 'airbnbNewUserPredictions.core.views.about_us', name='about'),
+    # Elements button
+    url(r'^elements/$', 'airbnbNewUserPredictions.core.views.elements', name='elements'),
+    url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
+
+    # url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
     url(r'^products/$', 'airbnbNewUserPredictions.core.views.products_list', name='products'),
     url(r'^products/(\d+)/$', 'airbnbNewUserPredictions.core.views.product_details', name='product'),
     url(r'^products/(\d+)/refresh/$', 'airbnbNewUserPredictions.core.views.product_refresh', name='refresh'),

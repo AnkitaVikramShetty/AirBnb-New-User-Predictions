@@ -13,21 +13,34 @@ from airbnbNewUserPredictions.core.models import Product
 from airbnbNewUserPredictions.sniffer.crawler import AirbnbNewUserPredictions
 
 
+def home_page(request):
+    return render(request, 'core/index.html', context=None)
+
+
+def about_us(request):
+    return render(request, 'core/generic.html', context=None)
+
+
+def elements(request):
+    return render(request, 'core/elements.html', context=None)
+
+
 def products_list(request):
     queryset = Product.objects.filter(status=Product.OK)
 
     querystring = request.GET.get('q')
     if querystring:
-        queryset = queryset.filter(Q(name__icontains=querystring) | Q(code__icontains=querystring) | Q(manufacturer__icontains=querystring) | Q(manufacturer_code__icontains=querystring))
+        queryset = queryset.filter(Q(name__icontains=querystring) | Q(code__icontains=querystring) | Q(
+            manufacturer__icontains=querystring) | Q(manufacturer_code__icontains=querystring))
 
     default_order = 'price_percentage_variance'
     order = request.GET.get('o', default_order)
-    if order not in ['name', '-name', 
-                     'code', '-code', 
-                     'current_price', '-current_price', 
-                     'price_changes', '-price_changes', 
-                     'price_percentage_variance', '-price_percentage_variance', 
-                     'visited_at', '-visited_at',]:
+    if order not in ['name', '-name',
+                     'code', '-code',
+                     'current_price', '-current_price',
+                     'price_changes', '-price_changes',
+                     'price_percentage_variance', '-price_percentage_variance',
+                     'visited_at', '-visited_at', ]:
         order = default_order
     queryset = queryset.order_by(order)
 
@@ -53,12 +66,13 @@ def products_list(request):
 
     label_sort_by = sorting_labels[order]
 
-    return render(request, 'core/products_list.html', { 
-            'products': products, 
-            'order': order, 
-            'querystring': querystring,
-            'label_sort_by': label_sort_by
-        })
+    return render(request, 'core/products_list.html', {
+        'products': products,
+        'order': order,
+        'querystring': querystring,
+        'label_sort_by': label_sort_by
+    })
+
 
 def product_details(request, code):
     try:
@@ -70,13 +84,14 @@ def product_details(request, code):
 
     if product.status == Product.OK:
         price_history_chart = product.price_history.all().order_by('created_at')
-        return render(request, 'core/product_details.html', { 
-                'product': product,
-                'price_history_chart': price_history_chart
-            })
+        return render(request, 'core/product_details.html', {
+            'product': product,
+            'price_history_chart': price_history_chart
+        })
     else:
         messages.error(request, u'Product with code {0} was not found.'.format(code))
         return redirect(r('home'))
+
 
 @require_POST
 def product_refresh(request, code):
@@ -89,10 +104,12 @@ def product_refresh(request, code):
         messages.error(request, u'Product with code {0} was not found.'.format(code))
         return redirect(r('home'))
 
+
 def hot(request):
     today = datetime.datetime.today()
     today = datetime.datetime(today.year, today.month, today.day)
-    products = Product.objects.filter(status=Product.OK, price_percentage_variance__lt=0.0, updated_at__gt=today).order_by('price_percentage_variance')
-    return render(request, 'core/hot.html', { 
-            'products': products 
-        })
+    products = Product.objects.filter(status=Product.OK, price_percentage_variance__lt=0.0,
+                                      updated_at__gt=today).order_by('price_percentage_variance')
+    return render(request, 'core/hot.html', {
+        'products': products
+    })
