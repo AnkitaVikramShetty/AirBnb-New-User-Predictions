@@ -2,6 +2,7 @@
 
 import datetime
 
+from django.core.checks import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse as r
 from django.db.models import Q
