@@ -57,6 +57,8 @@ INSTALLED_APPS = [
 	'airbnbNewUserPredictions.api',
     'airbnbNewUserPredictions.core',
     'airbnbNewUserPredictions.sniffer',
+
+    'trial_predictions.apps.trial_predictions_config',
 ]
 
 MIDDLEWARE = [
