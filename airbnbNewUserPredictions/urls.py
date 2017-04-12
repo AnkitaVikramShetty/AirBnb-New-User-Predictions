@@ -34,7 +34,6 @@ urlpatterns = [
     url(r'^hot/$', 'airbnbNewUserPredictions.core.views.hot', name='hot'),
     url(r'^api/', include('airbnbNewUserPredictions.api.urls', namespace='api')),
 
-    url(r'^trial_prediction_2/', include('trial_prediction_2.urls'))
-
+    url(r'^trial_prediction_2/', include('trial_prediction_2.urls')),
     url(r'^trial_predictions/', include('trial_predictions.urls')),
 ]
