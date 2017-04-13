@@ -41,25 +41,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='test_users',
-            fields=[
-                ('id', models.CharField(primary_key=True, max_length=50, serialize=False)),
-                ('date_account_created', models.CharField(max_length=50, blank=True)),
-                ('timestamp_first_active', models.CharField(max_length=6)),
-                ('date_first_booking', models.CharField(max_length=50, blank=True)),
-                ('gender', models.CharField(max_length=10)),
-                ('age', models.IntegerField(blank=True)),
-                ('signup_method', models.CharField(max_length=20)),
-                ('language', models.CharField(max_length=3)),
-                ('affiliate_channel', models.CharField(max_length=15)),
-                ('affiliate_provider', models.CharField(max_length=15)),
-                ('first_affiliate_tracked', models.CharField(max_length=15, blank=True)),
-                ('signup_app', models.CharField(max_length=15)),
-                ('first_device_type', models.CharField(max_length=15)),
-                ('first_browser', models.CharField(max_length=15)),
-            ],
-        ),
-        migrations.CreateModel(
             name='train_users_2',
             fields=[
                 ('id', models.CharField(primary_key=True, max_length=50, serialize=False)),
