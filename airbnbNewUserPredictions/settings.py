@@ -60,6 +60,7 @@ INSTALLED_APPS = [
 
     'trial_predictions.apps.trial_predictions_config',
     'trial_prediction_2.apps.trial_prediction_2_config',
+    'airbnb.apps.airbnb_config',
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,7 @@ csv.field_size_limit(2147483647)
 # Full path and name to your csv file
 csv_filepathname="train_users_2.csv"
 # Full path to your django project directory
-your_djangoproject_home="/Users/AnkitaShetty/PycharmProjects/airbnbNewUserPredictions/"
+your_djangoproject_home="/home/vishwas/Desktop/airbnbNewUserPredictions"
 
 
 sys.path.append(your_djangoproject_home)
@@ -40,3 +40,4 @@ for row in dataReader:
         train_user_2.first_device_type = row[13]
         train_user_2.first_browser = row[14]
         train_user_2.country_destination = countries.objects.get(country_destination = row[15])
+        train_user_2.save()
