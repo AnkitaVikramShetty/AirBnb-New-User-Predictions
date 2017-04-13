@@ -16,7 +16,7 @@ class countries(models.Model):
     language_levenshtein_distance = models.FloatField()
 
     def __str__(self):
-        return self.country_destination + '' + self.lat_destination
+        return self.country_destination + '' + str(self.lat_destination)
 
 
 class train_users_2(models.Model):
@@ -25,7 +25,7 @@ class train_users_2(models.Model):
     timestamp_first_active = models.CharField(max_length=6)
     date_first_booking = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10)
-    age = models.IntegerField(blank=True)
+    age = models.FloatField(blank=True)
     signup_method = models.CharField(max_length=20)
     signup_flow = models.IntegerField
     language = models.CharField(max_length=3)

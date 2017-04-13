@@ -5,15 +5,17 @@ import csv
 csv.field_size_limit(2147483647)
 
 # Full path and name to your csv file
-csv_filepathname="S:/Users/Maaz/airbnbNewUserPredictions/data/age_gender_bkts.csv"
+csv_filepathname="age_gender_bkts.csv"
 # Full path to your django project directory
-your_djangoproject_home="S:/Users/Maaz/airbnbNewUserPredictions/"
+your_djangoproject_home = "../"
 
 
 sys.path.append(your_djangoproject_home)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
-from trial_prediction_2.models import age_gender_bkts, countries
+# from trial_prediction_2.models import age_gender_bkts, countries
+# from trial_predictions.models import age_gender_bkts, countries
+from airbnb.models import age_gender_bkts, countries
 
 
 dataReader = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
