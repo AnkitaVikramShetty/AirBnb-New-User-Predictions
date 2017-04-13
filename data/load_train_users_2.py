@@ -5,7 +5,7 @@ import csv
 csv.field_size_limit(2147483647)
 
 # Full path and name to your csv file
-csv_filepathname = "train_users_2.csv"
+csv_filepathname = "users.csv"
 # Full path to your django project directory
 your_djangoproject_home = "../"
 
@@ -21,7 +21,7 @@ dataReader = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
 count = 0
 for row in dataReader:
     count += 1
-    if row[0] != 'id' and row[15] != 'NDF' and row[15] != 'other':  # Ignore the header row, import everything else
+    if row[0] != 'id':  # Ignore the header row, import everything else
         print(count)
         train_user_2 = train_users_2()
         train_user_2.id = row[0]

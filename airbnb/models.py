@@ -25,7 +25,7 @@ class train_users_2(models.Model):
     timestamp_first_active = models.CharField(max_length=6)
     date_first_booking = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10)
-    age = models.FloatField(blank=True)
+    age = models.CharField(max_length=50, blank=True)
     signup_method = models.CharField(max_length=20)
     signup_flow = models.IntegerField
     language = models.CharField(max_length=3)

@@ -20,11 +20,8 @@ from airbnb.models import age_gender_bkts, countries
 
 dataReader = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
 
-count = 0
 for row in dataReader:
-    count += 1
     if row[0] != 'age_bucket': # Ignore the header row, import everything else
-        print(count)
         age_gender_bkt = age_gender_bkts()
         age_gender_bkt.age_bucket = row[0]
         age_gender_bkt.country_destination = countries.objects.get(country_destination = row[1])
