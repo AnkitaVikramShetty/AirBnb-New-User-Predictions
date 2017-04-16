@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('trial_prediction_2', '0001_initial'),
+        ('new_user', '0001_initial'),
     ]
 
     operations = [
@@ -79,16 +79,16 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='train_users_2',
             name='country_destination',
-            field=models.ForeignKey(to='trial_prediction_2.countries'),
+            field=models.ForeignKey(to='new_user.countries'),
         ),
         migrations.AddField(
             model_name='sessions',
             name='user_id',
-            field=models.ForeignKey(to='trial_prediction_2.train_users_2'),
+            field=models.ForeignKey(to='new_user.train_users_2'),
         ),
         migrations.AddField(
             model_name='age_gender_bkts',
             name='country_destination',
-            field=models.ForeignKey(to='trial_prediction_2.countries'),
+            field=models.ForeignKey(to='new_user.countries'),
         ),
     ]

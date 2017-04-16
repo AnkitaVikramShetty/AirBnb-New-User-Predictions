@@ -32,9 +32,9 @@ DEBUG = True
 PROJECT_DIR = Path(__file__).parent
 
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default=True, cast=bool)
-SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=True, cast=bool)
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default=False, cast=bool)
+# SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=False, cast=bool)
 
 
 # SECRET_KEY = config('SECRET_KEY')
@@ -59,11 +59,11 @@ INSTALLED_APPS = [
     'airbnbNewUserPredictions.sniffer',
 
     'trial_predictions.apps.trial_predictions_config',
-    'trial_prediction_2.apps.trial_prediction_2_config',
+    'new_user.apps.trial_prediction_2_config',
     'airbnb.apps.airbnb_config',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
