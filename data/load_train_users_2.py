@@ -12,9 +12,10 @@ your_djangoproject_home = "../"
 sys.path.append(your_djangoproject_home)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
+from airbnb.models import train_users_2, countries
 # from new_user.models import train_users_2, countries
 # from trial_predictions.models import train_users_2, countries
-from new_user.models import train_users_2, countries
+# from new_user.models import train_users_2, countries
 
 dataReader = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
 

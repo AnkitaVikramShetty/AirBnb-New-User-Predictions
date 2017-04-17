@@ -14,9 +14,9 @@ sys.path.append(your_djangoproject_home)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
 # Make sure to uncomment line based on the app you are using
+from airbnb.models import sessions, train_users_2, countries
 # from trial_predictions.models import countries
 # from trial_prediction_2.models import countries
-from airbnb.models import sessions, train_users_2, countries
 
 count = 0
 dataReader = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
