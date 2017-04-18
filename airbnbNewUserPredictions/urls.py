@@ -29,13 +29,6 @@ urlpatterns = [
     url(r'^elements/$', 'airbnbNewUserPredictions.core.views.elements', name='elements'),
     url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
 
-    # url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
-    url(r'^products/$', 'airbnbNewUserPredictions.core.views.products_list', name='products'),
-    url(r'^products/(\d+)/$', 'airbnbNewUserPredictions.core.views.product_details', name='product'),
-    url(r'^products/(\d+)/refresh/$', 'airbnbNewUserPredictions.core.views.product_refresh', name='refresh'),
-    url(r'^hot/$', 'airbnbNewUserPredictions.core.views.hot', name='hot'),
-    url(r'^api/', include('airbnbNewUserPredictions.api.urls', namespace='api')),
-
     url(r'^new_user/', include('new_user.urls')),
     url(r'^trial_predictions/', include('trial_predictions.urls')),
     url(r'^airbnb/', include('airbnb.urls')),
