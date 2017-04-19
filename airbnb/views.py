@@ -1,8 +1,19 @@
+import csv
 import os.path
 import time
+
+import django_tables2 as tables
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from airbnb.prediction import predict
+
+
+class RenderResult(tables.Table):
+    id = tables.Column()
+    country = tables.Column()
+
+    def render_id(self, value):
+        return '%s' % value
 
 
 def index(request):
@@ -29,6 +40,12 @@ def prediction(request):
 
     if os.path.isfile(os.path.join('media', 'finalresult.csv')):
         print("Exists")
+        with open(os.path.join('media', 'finalresult.csv')) as result:
+            data = [{k: str(v) for k, v in row.items()}
+                    for row in csv.DictReader(result, skipinitialspace=True)]
+        table = RenderResult(data)
     else:
         raise ValueError("%s isn't a file!" % os.path.join('media', 'finalresult.csv'))
-    return render(request, 'airbnb.html', context=None)
+    return render(request, 'airbnb.html', {'result': table})
+
+

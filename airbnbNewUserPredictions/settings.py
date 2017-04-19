@@ -50,11 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django_tables2',
     'airbnbNewUserPredictions.api',
     'airbnbNewUserPredictions.core',
     'airbnbNewUserPredictions.sniffer',
-
     'trial_predictions.apps.trial_predictions_config',
     'new_user.apps.trial_prediction_2_config',
     'airbnb.apps.airbnb_config',
@@ -88,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
