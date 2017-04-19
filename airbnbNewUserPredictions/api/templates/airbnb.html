@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>{% block title %}Airbnb New User Booking Predictor{% endblock %}</title>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="{% static 'css/main.css' %}" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
@@ -17,8 +17,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 	</head>
-
-	<body>
+	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header">
@@ -33,15 +32,26 @@
 				</div>
 			</header>
 
-		<!-- Banner -->
-			<section id="banner">
-				<h1>Welcome to Airbnb Booking Predictor</h1>
+		<!-- Three -->
+			<section>
+                <div class="container">
+                    <h1 class="results">THE RESULTS</h1>
+                    <div class="row">
+                        <div class="btn btn-primary btn-xs pull-right">
+                            <a href="../../../media/finalresult.csv" download="predictions.csv" class="button special">Export as CSV</a>
+                        </div>
+                    </div>
+                    <div class="table table-striped custab" id="table-wrapper">
+                        <div id="table-scroll">
+                            {% render_table result %}
+                        </div>
+                    </div>
+
+
+                </div>
+
             </section>
 
-            <section>
-                <a href="../../../media/finalresult.csv" download="predictions.csv">Download the prediction as csv</a>
-                {% render_table result %}
-            </section>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">

@@ -3062,3 +3062,50 @@
 		}
 
 	}
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+#table-wrapper {
+  position:relative;
+}
+
+
+
+#table-scroll {
+  height:450px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+#table-wrapper table {
+  width:100%;
+}
+
+#table-wrapper table thead th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+}
+
+#table-wrapper thead {
+	text-transform: uppercase;
+}
+
+.results {
+	text-align: center;
+	margin-top: 20px;
+	font-size: xx-large;
+	font-weight: 400;
+}
