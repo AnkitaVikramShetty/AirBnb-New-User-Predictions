@@ -10,3 +10,6 @@ requests==2.7.0
 matlab
 numpy-1.12.1+mkl
 hdf5storage==0.1.14
+
+django-tables2
+sklearn
