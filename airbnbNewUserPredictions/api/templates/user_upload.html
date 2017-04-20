@@ -42,19 +42,27 @@
 					<header class="align-center">
 						<h2>Airbnb Booking prediction App 2</h2>
 					</header>
-					<p>
+                    {% if fileUrl %}
+                        <p><a href="{{ fileUrl }}">{{ fileName }}</a> successfully uploaded.</p>
 
-                    </p>
-					<form method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <input type="file" name="test_users" accept="text/csv">
+                        <p>
+                            Step 3.)
+                        </p>
+                        <a href="{% url 'user_predict' %}" class="button special">Predict!</a>
+                    {% else %}
+                        <p>
+                        Step 1.)
+                        </p>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file" name="users" accept="text/csv">
+                            <br><br>
 
-                        <br><br>
-                        <button type="submit" class="button special">Upload</button>
-                        <a href="{% url 'predict' %}" class="button special">Predict!</a>
-                    </form>
-                    {% if uploaded_file_url %}
-                        <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+                            <p>
+                                Step 2.)
+                            </p>
+                            <button type="submit" class="button special">Upload CSV</button>
+                        </form>
                     {% endif %}
 				</div>
 			</section>

@@ -14,6 +14,9 @@ class countries(models.Model):
     destination_language = models.CharField(max_length=3)
     language_levenshtein_distance = models.FloatField()
 
+    def __str__(self):
+        return self.country_destination
+
 class train_users_2(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     date_account_created = models.CharField(max_length=50, blank=True)
