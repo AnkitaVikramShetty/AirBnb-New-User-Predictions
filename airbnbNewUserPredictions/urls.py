@@ -28,7 +28,6 @@ urlpatterns = [
     # Elements button
     url(r'^elements/$', 'airbnbNewUserPredictions.core.views.elements', name='elements'),
     url(r'^visualizations/$', 'airbnbNewUserPredictions.core.views.visualizations', name='visualizations'),
-    url(r'^$', 'airbnbNewUserPredictions.core.views.products_list', name='home'),
     url(r'^new_user/', include('new_user.urls')),
     url(r'^trial_predictions/', include('trial_predictions.urls')),
     url(r'^airbnb/', include('airbnb.urls')),
