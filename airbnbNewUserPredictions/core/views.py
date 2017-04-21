@@ -25,6 +25,10 @@ def elements(request):
     return render(request, 'core/elements.html', context=None)
 
 
+def visualizations(request):
+    return render(request, 'core/visualization.html', context=None)
+
+
 def products_list(request):
     queryset = Product.objects.filter(status=Product.OK)
 

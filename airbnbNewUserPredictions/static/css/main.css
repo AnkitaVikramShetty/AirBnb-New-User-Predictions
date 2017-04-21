@@ -3079,8 +3079,6 @@
   position:relative;
 }
 
-
-
 #table-scroll {
   height:450px;
   overflow:auto;
@@ -3108,4 +3106,10 @@
 	margin-top: 20px;
 	font-size: xx-large;
 	font-weight: 400;
+}
+
+.image-description {
+	margin: auto;
+  	position: relative;
+  	top: 0; left: 0; bottom: 0; right: 0;
 }

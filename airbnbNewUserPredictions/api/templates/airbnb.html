@@ -27,6 +27,7 @@
 						<a href="{% url 'home' %}">Home</a>
 						<a href="{% url 'about' %}">About Us</a>
 						<a href="{% url 'elements' %}">Elements</a>
+                        <a href="{% url 'visualizations' %}">Visualizations</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -37,8 +38,8 @@
                 <div class="container">
                     <h1 class="results">THE RESULTS</h1>
                     <div class="row">
-                        <div class="btn btn-primary btn-xs pull-right">
-                            <a href="../../../media/finalresult.csv" download="predictions.csv" class="button special">Export as CSV</a>
+                        <div class="pull-right">
+                            <a href="../../../media/finalresult.csv" download="predictions.csv" class="button icon fa-download">Export as CSV</a>
                         </div>
                     </div>
                     <div class="table table-striped custab" id="table-wrapper">
