@@ -22,31 +22,32 @@ def user_upload(request):
         fileUrl = fileSystem.url(filename)
 
         return render(request, 'user_upload.html', {
-            'fileName': users.name,
+            'originalFileName': users.name,
+            'fileName': filename,
             'fileUrl': fileUrl
         })
 
     return render(request, 'user_upload.html')
 
 def user_predict(request):
-    user_prediction()
+    user_prediction(request.GET.get('fileName',''))
 
-    while not os.path.exists(os.path.join('media', 'finalresult.csv')):
+    while not os.path.exists(os.path.join('media', 'results.csv')):
         time.sleep(1)
 
-    if os.path.isfile(os.path.join('media', 'finalresult.csv')):
+    if os.path.isfile(os.path.join('media', 'results.csv')):
         print("Exists")
-        with open(os.path.join('media', 'finalresult.csv')) as result:
+        with open(os.path.join('media', 'results.csv')) as result:
             data = [{k: str(v) for k, v in row.items()}
                     for row in csv.DictReader(result, skipinitialspace=True)]
         table = render_result(data)
     else:
-        raise ValueError("%s isn't a file!" % os.path.join('media', 'finalresult.csv'))
-    return render(request, 'airbnb.html', {'result': table})
+        raise ValueError("%s isn't a file!" % os.path.join('media', 'results.csv'))
+    return render(request, 'new_user.html', {'result': table})
 
 class render_result(tables.Table):
     id = tables.Column()
-    country = tables.Column()
+    country_destination = tables.Column()
 
     def render_id(self, value):
         return '%s' % value
