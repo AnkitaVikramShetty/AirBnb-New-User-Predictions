@@ -2,6 +2,7 @@ from django import forms
 from django.db import models
 from airbnbNewUserPredictions import settings
 
+
 # Create your models here.
 
 
@@ -17,13 +18,14 @@ class countries(models.Model):
     def __str__(self):
         return self.country_destination
 
+
 class train_users_2(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     date_account_created = models.CharField(max_length=50, blank=True)
     timestamp_first_active = models.CharField(max_length=6)
     date_first_booking = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10)
-    age = models.IntegerField(blank=True)
+    age = models.FloatField(blank=True)
     signup_method = models.CharField(max_length=20)
     signup_flow = models.IntegerField
     language = models.CharField(max_length=3)
@@ -33,22 +35,24 @@ class train_users_2(models.Model):
     signup_app = models.CharField(max_length=15)
     first_device_type = models.CharField(max_length=15)
     first_browser = models.CharField(max_length=15)
-    country_destination = models.ForeignKey(countries, on_delete = models.CASCADE)
-    
+    country_destination = models.ForeignKey(countries, on_delete=models.CASCADE)
+
+
 class age_gender_bkts(models.Model):
     age_bucket = models.CharField(max_length=15)
-    country_destination = models.ForeignKey(countries, on_delete = models.CASCADE)
-    gender =  models.CharField(max_length=10)
-    population_in_thousands =  models.IntegerField
+    country_destination = models.ForeignKey(countries, on_delete=models.CASCADE)
+    gender = models.CharField(max_length=10)
+    population_in_thousands = models.IntegerField
     year = models.IntegerField
+
 
 class test_users(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     date_account_created = models.CharField(max_length=50, blank=True)
-    timestamp_first_active = models.CharField(max_length=6)
+    timestamp_first_active = models.CharField(max_length=18)
     date_first_booking = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10)
-    age = models.IntegerField(blank=True)
+    age = models.FloatField(blank=True)
     signup_method = models.CharField(max_length=20)
     signup_flow = models.IntegerField
     language = models.CharField(max_length=3)
@@ -58,6 +62,7 @@ class test_users(models.Model):
     signup_app = models.CharField(max_length=15)
     first_device_type = models.CharField(max_length=15)
     first_browser = models.CharField(max_length=15)
+
 
 class sessions(models.Model):
     user_id = models.ForeignKey(train_users_2, on_delete=models.CASCADE)
@@ -66,5 +71,3 @@ class sessions(models.Model):
     action_detail = models.CharField(max_length=50, blank=True)
     device_type = models.CharField(max_length=50)
     secs_elapsed = models.IntegerField
-
-

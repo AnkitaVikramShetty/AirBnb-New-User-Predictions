@@ -1,8 +1,8 @@
 {% load staticfiles %}<!DOCTYPE HTML>
 <html>
 	<head>
-		<title>{% block title %}Airbnb New User Booking Predictor 2{% endblock %}</title>
-		<meta charset="utf-8">
+		<title>{% block title %}Airbnb New User Booking Predictor{% endblock %}</title>
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="{% static 'css/main.css' %}" rel="stylesheet">
         <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
@@ -26,45 +26,55 @@
 						<a href="{% url 'home' %}">Home</a>
 						<a href="{% url 'about' %}">About Us</a>
 						<a href="{% url 'elements' %}">Elements</a>
+                        <a href="{% url 'visualizations' %}">Visualizations</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
 			</header>
 
-
-
-
-
-
 		<!-- Three -->
 			<section id="three" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
-						<h2>Airbnb Booking prediction App 2</h2>
+						<h2>Visualizations</h2>
+                        <p>Data exploration to figure out the information</p>
 					</header>
-                    {% if fileUrl %}
-                        <p><a href="{{ fileUrl }}">{{ originalFileName }}</a> successfully uploaded.</p>
-
-                        <p>
-                            Step 3.)
-                        </p>
-                        <a href="{% url 'user_predict' %}?fileName={{ fileName }}" class="button special">Predict!</a> OR
-                        <a href="{% url 'user_visualize' %}?fileName={{ fileName }}" class="button special">Visualize!</a>
-                    {% else %}
-                        <p>
-                        Step 1.)
-                        </p>
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <input type="file" name="users" accept="text/csv">
-                            <br><br>
-
-                            <p>
-                                Step 2.)
-                            </p>
-                            <button type="submit" class="button special">Upload CSV</button>
-                        </form>
-                    {% endif %}
+                    <div class="flex flex-2">
+						<article>
+							<div class="image fit">
+								<img src="{% static 'img/age.png' %}" alt="Pic 01" />
+							</div>
+							</article>
+						<article class="image-description">
+                            <h3>Age differences</h3>
+							</header>
+							<p>This visualization shows the age difference between male and female users registered on Airbnb.</p>
+						</article>
+					</div>
+                    <div class="flex flex-2">
+						<article>
+							<div class="image fit">
+								<img src="{% static 'img/date_account_created.png' %}" alt="Pic 01" />
+							</div>
+							</article>
+						<article class="image-description">
+                            <h3>Accounts created per year</h3>
+							</header>
+							<p>This visualization shows the dates the accounts of our users were created with time.</p>
+						</article>
+					</div>
+                    <div class="flex flex-2">
+						<article>
+							<div class="image fit">
+								<img src="{% static 'img/gender_count.png' %}" alt="Pic 01" />
+							</div>
+							</article>
+						<article class="image-description">
+                            <h3>Gender</h3>
+							</header>
+							<p>This visualization shows the user gender.</p>
+						</article>
+					</div>
 				</div>
 			</section>
 

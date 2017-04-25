@@ -8,7 +8,9 @@ import django_tables2 as tables
 
 # Create your views here.
 from new_user.matlabCode.classificationBaggedEnsembleByResampling import user_prediction
+from new_user.matlabCode.visualizedData import visualize
 
+from . models import test_users
 
 def index(request):
     return render(request, "<h1>Welcome to Trial prediction 2 app homepage</h1>", context=None)
@@ -51,3 +53,7 @@ class render_result(tables.Table):
 
     def render_id(self, value):
         return '%s' % value
+
+def user_visualize(request):
+    visualize(request.GET.get('fileName', ''))
+    return render(request, 'user_visualize.html')

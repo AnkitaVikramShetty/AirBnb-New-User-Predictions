@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('new_user', '0002_auto_20170413_0431'),
+        ('new_user', '0002_auto_20170424_1325'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='countries',
-            name='destination_km2',
-            field=models.FloatField(),
+            model_name='test_users',
+            name='timestamp_first_active',
+            field=models.CharField(max_length=18),
         ),
     ]
