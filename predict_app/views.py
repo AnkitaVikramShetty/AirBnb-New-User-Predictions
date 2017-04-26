@@ -10,7 +10,7 @@ import django_tables2 as tables
 
 from predict_app.scripts.classificationAlgorithm import predict_app_prediction
 from predict_app.scripts.load_users import load_users_method
-
+from predict_app.scripts.visualizedPredictedData import visualize
 
 def index(request):
     return  HttpResponse("<h1> Trial Prediction - Home Page </h1>")
@@ -61,5 +61,5 @@ def predict_predict(request):
     return render(request, 'predict_app.html', {'result': table})
 
 def predict_visualize(request):
-    # visualize(request.GET.get('fileName', ''))
-    return render(request, 'user_visualize.html')
+    visualize(request.GET.get('fileName', ''))
+    return render(request, 'predict_visualize.html')
