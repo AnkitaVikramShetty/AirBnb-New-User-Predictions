@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('trial_predictions', '0006_remove_train_users_2_age'),
+        ('predict_app', '0006_remove_train_users_2_age'),
     ]
 
     operations = [

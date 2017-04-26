@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^elements/$', 'airbnbNewUserPredictions.core.views.elements', name='elements'),
     url(r'^visualizations/$', 'airbnbNewUserPredictions.core.views.visualizations', name='visualizations'),
     url(r'^new_user/', include('new_user.urls')),
-    url(r'^trial_predictions/', include('trial_predictions.urls')),
+    url(r'^predict_app/', include('predict_app.urls')),
     url(r'^airbnb/', include('airbnb.urls')),
 ]
 

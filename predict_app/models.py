@@ -46,12 +46,12 @@ class age_gender_bkts(models.Model):
 class test_users(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
     date_account_created = models.CharField(max_length=50, blank=True)
-    timestamp_first_active = models.CharField(max_length=6)
+    timestamp_first_active = models.CharField(max_length=18)
     date_first_booking = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10)
-    age = models.IntegerField(blank=True)
+    age = models.FloatField(null=True)
     signup_method = models.CharField(max_length=20)
-    signup_flow = models.IntegerField
+    signup_flow = models.FloatField(null=True)
     language = models.CharField(max_length=3)
     affiliate_channel = models.CharField(max_length=15)
     affiliate_provider = models.CharField(max_length=15)
