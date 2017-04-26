@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'airbnbNewUserPredictions.api',
     'airbnbNewUserPredictions.core',
     'airbnbNewUserPredictions.sniffer',
-    'trial_predictions.apps.trial_predictions_config',
+    'predict_app.apps.trial_predictions_config',
     'new_user.apps.trial_prediction_2_config',
     'airbnb.apps.airbnb_config',
 ]

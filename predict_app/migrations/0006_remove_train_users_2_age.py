@@ -7,13 +7,12 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('trial_predictions', '0002_auto_20170413_0441'),
+        ('predict_app', '0005_remove_countries_destination_km2'),
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='test_users',
+        migrations.RemoveField(
+            model_name='train_users_2',
             name='age',
-            field=models.IntegerField(blank=True, null=True, default=0),
         ),
     ]
