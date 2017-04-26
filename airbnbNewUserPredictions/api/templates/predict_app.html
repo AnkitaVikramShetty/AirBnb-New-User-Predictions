@@ -1,0 +1,81 @@
+{% load render_table from django_tables2 %}
+{% load staticfiles %}<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}Airbnb New User Booking Predictor{% endblock %}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" type="image/png" href="{% static 'img/barn-32-194017.png' %}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{% static 'img/barn-152-194017.png' %}" sizes="192x192">
+        <link rel="icon" type="image/png" href="{% static 'img/barn-114-194017.png' %}" sizes="96x96">
+        <link rel="icon" type="image/png" href="{% static 'img/barn-16-194017.png' %}" sizes="16x16">
+        {% block stylesheet %}{% endblock %}
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{% url 'home' %}" class="logo">Airbnb New User Booking Predictor</a>
+					<nav id="nav">
+						<a href="{% url 'home' %}">Home</a>
+						<a href="{% url 'about' %}">About Us</a>
+						<a href="{% url 'elements' %}">Elements</a>
+                        <a href="{% url 'visualizations' %}">Visualizations</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Three -->
+			<section>
+                <div class="container">
+                    <h1 class="results">THE RESULTS</h1>
+                    <div class="row">
+                        <div class="pull-right">
+                            <a href="../../../media/results.csv" download="results.csv" class="button icon fa-download">Export as CSV</a>
+                        </div>
+                    </div>
+                    <div class="table table-striped custab" id="table-wrapper">
+                        <div id="table-scroll">
+                            {% render_table result %}
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Airbnb
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
