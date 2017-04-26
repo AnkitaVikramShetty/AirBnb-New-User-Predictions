@@ -8,6 +8,7 @@ import django_tables2 as tables
 
 # Create your views here.
 from new_user.matlabCode.classificationBaggedEnsembleByResampling import user_prediction
+from new_user.matlabCode.loadTestUsersToDatabase import load_users
 from new_user.matlabCode.visualizedData import visualize
 
 from . models import test_users
@@ -18,10 +19,16 @@ def index(request):
 def user_upload(request):
     if request.method == 'POST' and request.FILES['users']:
         users = request.FILES['users']
+        # print(request.FILES)
+
         fileSystem = FileSystemStorage()
+        # sqliteDatabase = test_users()
 
         filename = fileSystem.save(users.name, users)
         fileUrl = fileSystem.url(filename)
+
+        # sqliteDatabase.save(users.value);
+        load_users(users);
 
         return render(request, 'user_upload.html', {
             'originalFileName': users.name,
@@ -48,7 +55,7 @@ def user_predict(request):
     return render(request, 'new_user.html', {'result': table})
 
 class render_result(tables.Table):
-    id = tables.Column()
+    results_id = tables.Column()
     country_destination = tables.Column()
 
     def render_id(self, value):
