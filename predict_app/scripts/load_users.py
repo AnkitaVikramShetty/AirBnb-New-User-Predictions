@@ -7,7 +7,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
 from predict_app.models import test_users
 
-def load_users(users):
+def load_users_method(users):
     test_users.objects.all().delete()
     count = 0
 
@@ -15,7 +15,7 @@ def load_users(users):
         user = str(user.decode("utf-8")).strip()
         if ",,,,,,,,,,,,,," in user:
             break
-        # print(user)
+        print(user)
 
         row = user.split(',')
         count += 1

@@ -1,9 +1,16 @@
+import csv
+import os
+import time
+
 from django.core.files.storage import FileSystemStorage
 from django.http import  HttpResponse
 from django.shortcuts import render
 
-from predict_app.scripts import load_users
 import django_tables2 as tables
+
+from predict_app.scripts.classificationAlgorithm import predict_app_prediction
+from predict_app.scripts.load_users import load_users_method
+
 
 def index(request):
     return  HttpResponse("<h1> Trial Prediction - Home Page </h1>")
@@ -11,7 +18,7 @@ def index(request):
 def predict_upload(request):
     if request.method == 'POST' and request.FILES['users']:
         users = request.FILES['users']
-        # print(request.FILES)
+        print(request.FILES)
 
         fileSystem = FileSystemStorage()
         # sqliteDatabase = test_users()
@@ -20,15 +27,15 @@ def predict_upload(request):
         fileUrl = fileSystem.url(filename)
 
         # sqliteDatabase.save(users.value);
-        load_users(users);
+        load_users_method(users);
 
-        return render(request, 'user_upload.html', {
+        return render(request, 'predict_upload.html', {
             'originalFileName': users.name,
             'fileName': filename,
             'fileUrl': fileUrl
         })
 
-    return render(request, 'user_upload.html')
+    return render(request, 'predict_upload.html')
 
 class render_result(tables.Table):
     results_id = tables.Column()
@@ -36,3 +43,23 @@ class render_result(tables.Table):
 
     def render_id(self, value):
         return '%s' % value
+
+def predict_predict(request):
+    predict_app_prediction(request.GET.get('fileName',''))
+
+    while not os.path.exists(os.path.join('media', 'results.csv')):
+        time.sleep(1)
+
+    if os.path.isfile(os.path.join('media', 'results.csv')):
+        print("Exists")
+        with open(os.path.join('media', 'results.csv')) as result:
+            data = [{k: str(v) for k, v in row.items()}
+                    for row in csv.DictReader(result, skipinitialspace=True)]
+        table = render_result(data)
+    else:
+        raise ValueError("%s isn't a file!" % os.path.join('media', 'results.csv'))
+    return render(request, 'predict_app.html', {'result': table})
+
+def predict_visualize(request):
+    # visualize(request.GET.get('fileName', ''))
+    return render(request, 'user_visualize.html')
