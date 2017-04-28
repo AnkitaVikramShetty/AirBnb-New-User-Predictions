@@ -67,7 +67,6 @@ venv_bloodhound/
 
 data/sessions.csv
 media
-.idea/
 dummy.mat
 new_user/scripts/classificationEnsembleByResamplingAndBayesianHyperparameterOptimization.mat
 new_user/scripts/classificationEnsembleByResamplingAndBayesianHyperparameterOptimization.txt
