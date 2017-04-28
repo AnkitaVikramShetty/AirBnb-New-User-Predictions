@@ -1,6 +1,5 @@
 from new_user.scripts.preProcess import pre_process
 from new_user.models import test_users, pre_processed_data
-import numpy as np
 import pandas as pd
 
 import matplotlib
@@ -48,4 +47,23 @@ def visualize(originalFileName):
     users.date_account_created.value_counts().plot(kind='line', linewidth=1.2, color='#FD5C64')
 
     plt.savefig(os.path.join('airbnbNewUserPredictions/static/img/date_account_created.png'))
+    plt.close()
+
+    # users.timestamp_first_active = [x[0:8] for x in users.timestamp_first_active]
+    # users['date_first_active'] = pd.to_datetime((users.timestamp_first_active), format='%Y%m%d')
+
+    # users.date_first_active.value_counts().plot(kind='line', linewidth=1.2, color='#FD5C64')
+    # plt.savefig(os.path.join('airbnbNewUserPredictions/static/img/date_first_active.png'))
+    # plt.close()
+
+    weekdays = []
+    for date in users.date_account_created:
+        weekdays.append(date.weekday())
+    weekdays = pd.Series(weekdays)
+
+    sns.barplot(x=weekdays.value_counts().index, y=weekdays.value_counts().values, order=range(0, 7))
+    plt.xlabel('Week Day')
+    sns.despine()
+
+    plt.savefig(os.path.join('airbnbNewUserPredictions/static/img/weekday.png'))
     plt.close()

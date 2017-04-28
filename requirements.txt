@@ -1,6 +1,6 @@
 scipy
 
-pandas
+pandas==0.19.2
 Django==1.8.3
 Unipath==1.1
 dj-database-url==0.3.0
