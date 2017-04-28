@@ -1,13 +1,27 @@
 import sys, os
+import csv
 
+import numpy as np
+import pandas as pd
+
+# csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(2147483647)
+
+# Full path and name to your csv file
+# csv_filepathname = "test_users_10.csv"
+# Full path to your django project directory
 your_djangoproject_home = "../"
 
 sys.path.append(your_djangoproject_home)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
-from predict_app.models import test_users
+from new_user.models import test_users
+# from new_user.models import train_users_2, countries
+# from trial_predictions.models import train_users_2, countries
+# from new_user.models import train_users_2, countries
 
-def load_users_method(users):
+def load_users(users):
+    # dataframe = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
     test_users.objects.all().delete()
     count = 0
 
@@ -16,6 +30,14 @@ def load_users_method(users):
         if ",,,,,,,,,,,,,," in user:
             break
         print(user)
+
+        # av = dataframe.age.values
+        # dataframe['age'] = np.where(np.logical_or(av < 14, av > 100), -1, av)
+        #
+        # dataframe = dataframe.fillna(-1)
+        # dataframe.to_csv(csv_filepathname, index=False)
+        # dataframe = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')
+
 
         row = user.split(',')
         count += 1
