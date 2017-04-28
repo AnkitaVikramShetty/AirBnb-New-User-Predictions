@@ -21,21 +21,21 @@ class countries(models.Model):
 
 class train_users_2(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
-    date_account_created = models.CharField(max_length=50, blank=True)
+    date_account_created = models.CharField(max_length=50, null=True)
     timestamp_first_active = models.CharField(max_length=6)
-    date_first_booking = models.CharField(max_length=50, blank=True)
+    date_first_booking = models.CharField(max_length=50, null=True)
     gender = models.CharField(max_length=10)
-    age = models.FloatField(blank=True)
+    age = models.FloatField(null=True)
     signup_method = models.CharField(max_length=20)
-    signup_flow = models.IntegerField
+    signup_flow = models.FloatField(null=True)
     language = models.CharField(max_length=3)
     affiliate_channel = models.CharField(max_length=15)
     affiliate_provider = models.CharField(max_length=15)
-    first_affiliate_tracked = models.CharField(max_length=15, blank=True)
+    first_affiliate_tracked = models.CharField(max_length=15, null=True)
     signup_app = models.CharField(max_length=15)
     first_device_type = models.CharField(max_length=15)
     first_browser = models.CharField(max_length=15)
-    country_destination = models.ForeignKey(countries, on_delete=models.CASCADE)
+    country_destination = models.CharField(max_length=15)
 
 
 class age_gender_bkts(models.Model):
@@ -48,9 +48,9 @@ class age_gender_bkts(models.Model):
 
 class test_users(models.Model):
     id = models.CharField(max_length=50, primary_key=True)
-    date_account_created = models.CharField(max_length=50, blank=True)
+    date_account_created = models.CharField(max_length=50, null=True)
     timestamp_first_active = models.CharField(max_length=18)
-    date_first_booking = models.CharField(max_length=50, blank=True)
+    date_first_booking = models.CharField(max_length=50, null=True)
     gender = models.CharField(max_length=10)
     age = models.FloatField(null=True)
     signup_method = models.CharField(max_length=20)
@@ -58,25 +58,25 @@ class test_users(models.Model):
     language = models.CharField(max_length=3)
     affiliate_channel = models.CharField(max_length=15)
     affiliate_provider = models.CharField(max_length=15)
-    first_affiliate_tracked = models.CharField(max_length=15, blank=True)
+    first_affiliate_tracked = models.CharField(max_length=15, null=True)
     signup_app = models.CharField(max_length=15)
     first_device_type = models.CharField(max_length=15)
     first_browser = models.CharField(max_length=15)
 
 
 class sessions(models.Model):
-    user_id = models.ForeignKey(train_users_2, on_delete=models.CASCADE)
+    user_id = models.CharField(max_length=50)
     action = models.CharField(max_length=50)
-    action_type = models.CharField(max_length=50, blank=True)
-    action_detail = models.CharField(max_length=50, blank=True)
+    action_type = models.CharField(max_length=50, null=True)
+    action_detail = models.CharField(max_length=50, null=True)
     device_type = models.CharField(max_length=50)
-    secs_elapsed = models.IntegerField
+    secs_elapsed = models.FloatField(null=True)
 
 class pre_processed_data(models.Model):
     affiliate_channel = models.CharField(max_length=15)
     affiliate_provider = models.CharField(max_length=15)
     age = models.FloatField(null=True)
-    first_affiliate_tracked = models.CharField(max_length=15, blank=True)
+    first_affiliate_tracked = models.CharField(max_length=15, null=True)
     first_browser = models.CharField(max_length=15)
     first_device_type = models.CharField(max_length=15)
     gender = models.CharField(max_length=10)

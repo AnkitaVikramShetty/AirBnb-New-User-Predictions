@@ -17,7 +17,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
 from new_user.models import test_users
 # from new_user.models import train_users_2, countries
-# from trial_predictions.models import train_users_2, countries
+# from predict_app.models import train_users_2, countries
 # from new_user.models import train_users_2, countries
 
 # dataframe = csv.reader(open(csv_filepathname), delimiter=',', quotechar='"')

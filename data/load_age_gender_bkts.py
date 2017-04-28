@@ -13,7 +13,7 @@ your_djangoproject_home = "../"
 sys.path.append(your_djangoproject_home)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'airbnbNewUserPredictions.settings'
 
-from airbnb.models import age_gender_bkts, countries
+from new_user.models import age_gender_bkts, countries
 # from trial_prediction_2.models import age_gender_bkts, countries
 # from trial_predictions.models import age_gender_bkts, countries
 

@@ -24,7 +24,7 @@ class train_users_2(models.Model):
     gender = models.CharField(max_length=10)
     age = models.IntegerField(blank=True)
     signup_method = models.CharField(max_length=20)
-    signup_flow = models.IntegerField
+    signup_flow = models.FloatField(null=True)
     language = models.CharField(max_length=3)
     affiliate_channel = models.CharField(max_length=15)
     affiliate_provider = models.CharField(max_length=15)
