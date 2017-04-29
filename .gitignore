@@ -72,3 +72,4 @@ new_user/scripts/classificationEnsembleByResamplingAndBayesianHyperparameterOpti
 new_user/scripts/classificationEnsembleByResamplingAndGridSearchHyperparameterOptimization.mat
 new_user/scripts/classificationEnsembleByResamplingAndRandomSearchHyperparameterOptimization.mat
 .idea/
+data/sessions.csv

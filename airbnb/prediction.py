@@ -144,6 +144,7 @@ def generate_result(y_pred, id_test, le, filename):
 # ---------- Function to predict country destination using bagging via random forest classifier ------ #
 def predict():
     print("In prediction")
+    return
     pretest = pd.read_csv(os.path.join('media', 'test_users.csv'), header=0, parse_dates=[1, 2, 3])
     pretrain = pd.DataFrame(list(train_users_2.objects.all().values()))
     df_sessions = pd.DataFrame(list(sessions.objects.all().values()))

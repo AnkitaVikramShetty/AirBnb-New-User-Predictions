@@ -1,16 +1,10 @@
 # coding: utf-8
 
-import datetime
+from django.core.files.storage import FileSystemStorage
+from django.shortcuts import render
 
-from django.core.checks import messages
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse as r
-from django.db.models import Q
-from django.shortcuts import render, redirect
-from django.views.decorators.http import require_POST
-
-from airbnbNewUserPredictions.core.models import Product
-from airbnbNewUserPredictions.sniffer.crawler import AirbnbNewUserPredictions
+from new_user.scripts.loadTestUsersToDatabase import load_users
+from predict_app.scripts.load_users import load_users_method
 
 
 def home_page(request):
@@ -21,9 +15,29 @@ def about_us(request):
     return render(request, 'core/about.html', context=None)
 
 
-def elements(request):
-    return render(request, 'core/elements.html', context=None)
-
-
 def visualizations(request):
     return render(request, 'core/visualization.html', context=None)
+
+
+def upload(request):
+    if request.method == 'POST' and request.FILES['users']:
+        users = request.FILES['users']
+        # print(request.FILES)
+
+        fileSystem = FileSystemStorage()
+        # sqliteDatabase = test_users()
+
+        filename = fileSystem.save(users.name, users)
+        fileUrl = fileSystem.url(filename)
+
+        # sqliteDatabase.save(users.value);
+        load_users(users)
+        load_users_method(users)
+
+        return render(request, 'core/upload.html', {
+            'originalFileName': users.name,
+            'fileName': filename,
+            'fileUrl': fileUrl
+        })
+
+    return render(request, 'core/upload.html')

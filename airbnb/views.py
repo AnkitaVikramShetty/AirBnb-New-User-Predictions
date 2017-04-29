@@ -35,17 +35,17 @@ def upload_file(request):
 def prediction(request):
     predict()
 
-    while not os.path.exists(os.path.join('media', 'finalresult.csv')):
+    while not os.path.exists(os.path.join('data', 'test.csv')):
         time.sleep(1)
 
-    if os.path.isfile(os.path.join('media', 'finalresult.csv')):
+    if os.path.isfile(os.path.join('data', 'test.csv')):
         print("Exists")
-        with open(os.path.join('media', 'finalresult.csv')) as result:
+        with open(os.path.join('data', 'test.csv')) as result:
             data = [{k: str(v) for k, v in row.items()}
                     for row in csv.DictReader(result, skipinitialspace=True)]
         table = RenderResult(data)
     else:
-        raise ValueError("%s isn't a file!" % os.path.join('media', 'finalresult.csv'))
+        raise ValueError("%s isn't a file!" % os.path.join('data', 'test.csv'))
     return render(request, 'airbnb.html', {'result': table})
 
 

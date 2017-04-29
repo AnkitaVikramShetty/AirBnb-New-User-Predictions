@@ -26,7 +26,6 @@
 					<nav id="nav">
 						<a href="{% url 'home' %}">Home</a>
 						<a href="{% url 'about' %}">About Us</a>
-						<a href="{% url 'elements' %}">Elements</a>
                         <a href="{% url 'visualizations' %}">Visualizations</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
@@ -49,18 +48,21 @@
                                 <p>upload a csv with a list of users and their info and
                                         predict where their next destination will be</p>
                                 <footer>
-                                    <a href="{% url 'upload' %}" class="button special">Go to prediction app 1!</a>
+                                    <a href="{% url 'upload_page' %}" class="button special">Go to prediction app!</a>
                                 </footer>
-
-                                <br>
-                                <footer>
-                                    <a href="{% url 'user_upload' %}" class="button special">Go to prediction app 2!</a>
-                                </footer>
-
-                                <br>
-                                <footer>
-                                    <a href="{% url 'predict_upload' %}" class="button special">Go to prediction app 3!</a>
-                                </footer>
+{#                                <footer>#}
+{#                                    <a href="{% url 'upload' %}" class="button special">Go to prediction app 1!</a>#}
+{#                                </footer>#}
+{##}
+{#                                <br>#}
+{#                                <footer>#}
+{#                                    <a href="{% url 'user_upload' %}" class="button special">Go to prediction app 2!</a>#}
+{#                                </footer>#}
+{##}
+{#                                <br>#}
+{#                                <footer>#}
+{#                                    <a href="{% url 'predict_upload' %}" class="button special">Go to prediction app 3!</a>#}
+{#                                </footer>#}
                             </article>
                         </div>
                     </div>
