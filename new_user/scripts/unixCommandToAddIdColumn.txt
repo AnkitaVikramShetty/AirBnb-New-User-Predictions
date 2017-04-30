@@ -1,0 +1,4 @@
+awk -F'\t' -v OFS='\t' '
+  NR == 1 {print "ID", $0; next}
+  {print (NR-1), $0}
+' input.csv > output.csv
