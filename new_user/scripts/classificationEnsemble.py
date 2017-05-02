@@ -66,7 +66,7 @@ def user_prediction(fileName):
     y = eng.predictUsingClassificationEnsemble(matFile, preProcessedFileName);
     print(y);
 
-    # os.remove(preProcessedFileName)
+    os.remove(preProcessedFileName)
     print("File Removed!")
     # y = make_predictions(eng, vals)
     # print(y)
