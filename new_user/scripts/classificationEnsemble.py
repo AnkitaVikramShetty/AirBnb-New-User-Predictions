@@ -51,7 +51,10 @@ def user_prediction(fileName):
     preProcessedFileName = "pre_processed.csv";
     preProcessedFileName = os.path.join('media', preProcessedFileName);
 
-    dataframe.to_csv(preProcessedFileName);
+    dataframe.to_csv(preProcessedFileName,
+                     columns=["gender", "age", "signup_method", "signup_flow", "language", "affiliate_channel",
+                              "affiliate_provider", "first_affiliate_tracked", "signup_app", "first_device_type",
+                              "first_browser", "dac_year", "dac_month", "dac_day", "tfa_year", "tfa_month", "tfa_day"]);
     preProcessedFileName = os.path.abspath(preProcessedFileName);
 
     matFile = "classificationEnsembleByBayesianHyperparameterOptimization.mat";
@@ -60,10 +63,10 @@ def user_prediction(fileName):
     matFile = os.path.abspath(matFile);
     print(matFile)
 
-    y = eng.predictUsingClassificationBaggedEnsembleByResampling(matFile, preProcessedFileName);
+    y = eng.predictUsingClassificationEnsemble(matFile, preProcessedFileName);
     print(y);
 
-    os.remove(preProcessedFileName)
+    # os.remove(preProcessedFileName)
     print("File Removed!")
     # y = make_predictions(eng, vals)
     # print(y)

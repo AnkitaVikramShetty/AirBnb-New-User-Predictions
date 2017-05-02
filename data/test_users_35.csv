@@ -1,0 +1,51 @@
+id,date_account_created,timestamp_first_active,date_first_booking,gender,age,signup_method,signup_flow,language,affiliate_channel,affiliate_provider,first_affiliate_tracked,signup_app,first_device_type,first_browser
+4ft3gnwmtx,9/28/2010,20090609231247,8/2/2010,FEMALE,56,basic,3,en,direct,direct,untracked,Web,Windows Desktop,IE
+bjjt8pjhuk,12/5/2011,20091031060129,9/8/2012,FEMALE,42,facebook,0,en,direct,direct,untracked,Web,Mac Desktop,Firefox
+87mebub9p4,9/14/2010,20091208061105,2/18/2010,-unknown-,41,basic,0,en,direct,direct,untracked,Web,Mac Desktop,Chrome
+osr2jwljor,1/1/2010,20100101215619,1/2/2010,-unknown-,,basic,0,en,other,other,omg,Web,Mac Desktop,Chrome
+lsw9q7uk0j,1/2/2010,20100102012558,1/5/2010,FEMALE,46,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Safari
+0d01nltbrs,1/3/2010,20100103191905,1/13/2010,FEMALE,47,basic,0,en,direct,direct,omg,Web,Mac Desktop,Safari
+a1vcnhxeij,1/4/2010,20100104004211,7/29/2010,FEMALE,50,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Safari
+6uh8zyj2gn,1/4/2010,20100104023758,1/4/2010,-unknown-,46,basic,0,en,other,craigslist,omg,Web,Mac Desktop,Firefox
+yuuqmid2rp,1/4/2010,20100104194251,1/6/2010,FEMALE,36,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Firefox
+k6np330cm1,1/5/2010,20100105060859,1/18/2010,-unknown-,,basic,0,en,direct,direct,,Web,Other/Unknown,-unknown-
+v4d5rl22px,1/7/2010,20100107204555,1/8/2010,FEMALE,33,basic,0,en,direct,direct,untracked,Web,Windows Desktop,Chrome
+frhre329au,1/7/2010,20100107224625,1/9/2010,-unknown-,31,basic,0,en,other,craigslist,,Web,Other/Unknown,-unknown-
+gdka1q5ktd,1/10/2010,20100110010817,1/10/2010,FEMALE,29,basic,0,en,direct,direct,untracked,Web,Mac Desktop,Chrome
+qdubonn3uk,1/10/2010,20100110152120,1/18/2010,-unknown-,,basic,0,en,direct,direct,,Web,Other/Unknown,-unknown-
+qsibmuz9sx,1/10/2010,20100110220941,1/11/2010,MALE,30,basic,0,en,direct,direct,linked,Web,Mac Desktop,Chrome
+80f7dwscrn,1/11/2010,20100111031438,1/11/2010,-unknown-,40,basic,0,en,seo,google,untracked,Web,iPhone,-unknown-
+al8bcetz0g,1/12/2010,20100112131444,1/15/2010,FEMALE,26,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Chrome
+hfrl5gle36,1/12/2010,20100112205949,1/22/2010,FEMALE,32,basic,0,en,other,craigslist,untracked,Web,Desktop (Other),Chrome
+tp6x3md0n4,1/13/2010,20100113044650,1/13/2010,-unknown-,35,basic,0,en,direct,direct,,Web,Other/Unknown,-unknown-
+hql77nu2lk,1/13/2010,20100113064333,1/19/2010,-unknown-,37,basic,0,en,direct,direct,untracked,Web,Android Tablet,-unknown-
+cheova4spt,1/14/2010,20100114025257,1/24/2010,-unknown-,42,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Firefox
+7my0vrljxc,1/15/2010,20100115221929,1/15/2010,FEMALE,31,basic,0,en,direct,direct,linked,Web,Mac Desktop,Safari
+k15j7mbny0,1/19/2010,20100119013616,1/21/2010,FEMALE,30,basic,0,en,direct,direct,untracked,Web,Mac Desktop,Chrome
+g3z67e37mb,12/1/2010,20100123090523,12/3/2010,-unknown-,,basic,0,en,direct,direct,,Web,Other/Unknown,-unknown-
+g1q6caq452,1/23/2010,20100123201540,1/27/2010,FEMALE,44,basic,0,en,other,craigslist,untracked,Web,Windows Desktop,IE
+f6mzhb4wbc,1/24/2010,20100124002335,2/25/2010,-unknown-,,basic,0,en,direct,direct,untracked,Web,Mac Desktop,Safari
+ngai8kt2yi,1/24/2010,20100124020049,1/24/2010,-unknown-,,basic,0,en,other,craigslist,,Web,Other/Unknown,-unknown-
+byozd991xf,1/24/2010,20100124232938,1/25/2010,-unknown-,34,basic,0,en,other,craigslist,,Web,Other/Unknown,-unknown-
+rcx09dn2je,1/25/2010,20100125203143,1/26/2010,-unknown-,,basic,0,en,direct,direct,untracked,Web,Mac Desktop,Safari
+ae59m0iqsx,1/25/2010,20100125232246,1/26/2010,-unknown-,33,basic,0,en,other,craigslist,untracked,Web,iPad,Mobile Safari
+efabqzuxmf,1/26/2010,20100126192045,1/27/2010,-unknown-,44,basic,0,en,other,craigslist,untracked,Web,Mac Desktop,Firefox
+emg8edpcpm,1/26/2010,20100126233019,7/30/2010,-unknown-,19,basic,0,en,direct,direct,omg,Web,iPad,Mobile Safari
+ehcdcpkn8y,1/27/2010,20100127083836,1/28/2010,-unknown-,,basic,0,en,direct,direct,untracked,Web,Android Tablet,Chrome
+fp6ndcm5ak,1/27/2010,20100127232016,1/27/2010,MALE,52,basic,0,en,direct,direct,untracked,Web,Windows Desktop,Firefox
+ranh94tmin,1/29/2010,20100129182105,1/29/2010,-unknown-,,basic,0,en,direct,direct,,Web,Other/Unknown,-unknown-
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
