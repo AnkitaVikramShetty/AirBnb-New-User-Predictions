@@ -47,9 +47,7 @@ def predict_app_prediction(fileName):
     dataframe.to_csv(preProcessedFileName);
     preProcessedFileName = os.path.abspath(preProcessedFileName);
 
-    # matFile = "classificationBaggedEnsembleByResampling.mat";
-    matFile = "dummy.mat";
-
+    matFile = "classificationEnsembleByRandomSearchHyperparameterOptimization.mat";
     matFile = os.path.join('predict_app', 'scripts', matFile);
 
     matFile = os.path.abspath(matFile);

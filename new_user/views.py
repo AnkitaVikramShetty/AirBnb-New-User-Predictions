@@ -7,7 +7,7 @@ from django.shortcuts import render
 import django_tables2 as tables
 
 # Create your views here.
-from new_user.scripts.classificationBaggedEnsembleByResampling import user_prediction
+from new_user.scripts.classificationEnsemble import user_prediction
 from new_user.scripts.loadTestUsersToDatabase import load_users
 from new_user.scripts.visualizedData import visualize
 

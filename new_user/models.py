@@ -42,8 +42,8 @@ class age_gender_bkts(models.Model):
     age_bucket = models.CharField(max_length=15)
     country_destination = models.ForeignKey(countries, on_delete=models.CASCADE)
     gender = models.CharField(max_length=10)
-    population_in_thousands = models.IntegerField
-    year = models.IntegerField
+    population_in_thousands = models.FloatField(null=True)
+    year = models.FloatField(null=True)
 
 
 class test_users(models.Model):

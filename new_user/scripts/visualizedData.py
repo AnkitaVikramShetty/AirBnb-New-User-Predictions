@@ -1,5 +1,5 @@
 from new_user.scripts.preProcess import pre_process
-from new_user.models import test_users, pre_processed_data
+from new_user.models import test_users, pre_processed_data, age_gender_bkts
 import pandas as pd
 
 import matplotlib
@@ -67,3 +67,9 @@ def visualize(originalFileName):
 
     plt.savefig(os.path.join('airbnbNewUserPredictions/static/img/weekday.png'))
     plt.close()
+
+    # bkts = pd.DataFrame(list(age_gender_bkts.objects.all().values()))
+    # sns.factorplot(x="age_bucket", y="population_in_thousands", hue="gender", col="country_destination_id", data=bkts,
+    #                kind="bar", size=6)
+    # plt.savefig(os.path.join('airbnbNewUserPredictions/static/img/age_gender_bkts.png'))
+    # plt.close()

@@ -1,0 +1,17 @@
+X = csvread('train_users_2_reduced_input.csv', 1, 0);
+Y = csvread('train_users_2_reduced_output.csv',1, 0);
+rng(5); % For reproducibility
+
+% t = templateTree('MaxNumSplits',11,'MinLeafSize',1,'MinParentSize',2,'NumVariablesToSample',5,'SplitCriterion','deviance');
+% t = templateTree('NumVariablesToSample',5);
+optimizer = struct('Optimizer','gridsearch');
+
+% Mdl = fitcensemble(X,Y,'Method','Bag','Learners',t,'CrossVal','on','HyperparameterOptimizationOptions',optimizer);
+% Mdl = fitcensemble(X,Y,'Method','Bag','Learners',t,'HyperparameterOptimizationOptions',optimizer);
+Mdl = fitcensemble(X,Y,'Method','Bag','OptimizeHyperparameters','auto','HyperparameterOptimizationOptions',optimizer);
+
+options = statset('UseParallel',true);
+imp = oobPermutedPredictorImportance(Mdl,'Options',options);
+
+view(Mdl.Trained{1},'Mode','graph')
+view(ens.Trained{t})
